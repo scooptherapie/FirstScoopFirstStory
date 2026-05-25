@@ -1380,6 +1380,578 @@
         min-height: 30px;
       }
     }
+
+    /* FINAL RESPONSIVE FIX
+       Tampilan HP dibuat vertikal/panjang ke bawah,
+       tapi mode download tetap dipaksa landscape 1920x1080. */
+    @media (max-width: 760px) {
+      html,
+      body {
+        overflow-x: hidden;
+      }
+
+      body::before,
+      body::after {
+        width: 360px;
+        height: 130px;
+        opacity: .42;
+      }
+
+      .app {
+        min-height: 100svh;
+        padding: 18px 12px 28px;
+        place-items: start center;
+      }
+
+      .panel {
+        width: 100%;
+        min-height: auto;
+        padding: 20px 14px;
+        border-radius: 30px;
+        border-width: 3px;
+      }
+
+      .top-ice {
+        gap: 8px;
+        margin-bottom: 10px;
+      }
+
+      .ice-cup {
+        width: 50px;
+        height: 60px;
+      }
+
+      .ice-bowl {
+        width: 50px;
+        height: 26px;
+      }
+
+      .ice-scoop {
+        width: 24px;
+        height: 23px;
+      }
+
+      .mini-badge {
+        font-size: 15px;
+        padding: 8px 14px;
+        margin-bottom: 14px;
+      }
+
+      h1,
+      .big-title {
+        font-size: clamp(42px, 15vw, 58px);
+        line-height: .88;
+        letter-spacing: .5px;
+        text-shadow:
+          2px 2px 0 var(--blue-dark),
+          -2px 2px 0 var(--blue-dark),
+          2px -2px 0 var(--blue-dark),
+          -2px -2px 0 var(--blue-dark),
+          0 5px 0 rgba(255,255,255,.85);
+      }
+
+      .subtitle {
+        width: 100%;
+        margin: 16px auto 20px;
+        font-size: 18px;
+        line-height: 1.2;
+      }
+
+      .login-box,
+      .code-box {
+        flex-direction: column;
+        border-radius: 28px;
+        padding: 8px;
+      }
+
+      .login-box input,
+      .code-box input {
+        text-align: center;
+        font-size: 16px;
+      }
+
+      .btn {
+        width: 100%;
+        min-width: 0;
+        font-size: 20px;
+        padding: 13px 18px;
+      }
+
+      .photo-uploader {
+        width: 100%;
+        padding: 12px;
+        border-radius: 26px;
+      }
+
+      .photo-uploader label {
+        font-size: 18px;
+      }
+
+      .game-head {
+        justify-content: center;
+        text-align: center;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .player-info h2 {
+        font-size: 34px;
+      }
+
+      .round-pill {
+        font-size: 18px;
+        padding: 10px 16px;
+      }
+
+      .game-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .progress-card {
+        order: -1;
+      }
+
+      .machine-card,
+      .progress-card,
+      .active-card {
+        padding: 18px;
+        border-radius: 30px;
+      }
+
+      .machine-card {
+        min-height: auto;
+      }
+
+      .machine {
+        width: min(270px, 100%);
+        height: 270px;
+        margin: -8px auto 8px;
+        transform: none;
+      }
+
+      .machine-top {
+        width: 170px;
+        height: 58px;
+      }
+
+      .machine-glass {
+        width: 205px;
+        height: 158px;
+        top: 44px;
+      }
+
+      .machine-body {
+        width: 245px;
+        height: 125px;
+      }
+
+      .machine-mouth {
+        width: 100px;
+        height: 50px;
+        bottom: 40px;
+      }
+
+      .gacha-ball {
+        width: 50px;
+        height: 50px;
+        bottom: 56px;
+      }
+
+      .machine-title {
+        font-size: 32px;
+      }
+
+      .machine-text {
+        font-size: 18px;
+        line-height: 1.2;
+      }
+
+      .stamp-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 9px;
+      }
+
+      .stamp-slot {
+        min-height: 88px;
+        border-radius: 20px;
+      }
+
+      .history-item {
+        font-size: 13px;
+      }
+
+      .active-card p {
+        font-size: 15px;
+      }
+
+      .mission-overlay {
+        align-items: start;
+        overflow-y: auto;
+        padding: 14px 10px 24px;
+      }
+
+      .mission-modal {
+        width: 100%;
+        max-height: none;
+        overflow: visible;
+        padding: 12px;
+        border-radius: 30px;
+      }
+
+      .mission-card,
+      .final-card {
+        min-width: 0;
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        aspect-ratio: auto;
+        padding: 22px 16px;
+        border-radius: 30px;
+        overflow: visible;
+      }
+
+      .mission-card::before,
+      .final-card::before {
+        inset: 12px;
+        border-radius: 22px;
+      }
+
+      .mission-card::after,
+      .final-card::after {
+        right: 24px;
+        bottom: 18px;
+        font-size: 20px;
+      }
+
+      .card-sprinkle.one {
+        left: 28px;
+        bottom: 26px;
+      }
+
+      .card-sprinkle.two {
+        right: 34px;
+        top: 28px;
+      }
+
+      .card-sprinkle.three {
+        left: 38%;
+        top: 18px;
+      }
+
+      .mission-card-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        height: auto;
+        align-items: stretch;
+      }
+
+      .mission-visual {
+        height: auto;
+        min-height: 190px;
+        border-radius: 28px;
+        padding: 26px 12px;
+      }
+
+      .mission-sticker {
+        width: 104px;
+        height: 104px;
+        font-size: 56px;
+        margin-bottom: 12px;
+      }
+
+      .card-label {
+        font-size: 16px;
+        white-space: normal;
+        text-align: center;
+      }
+
+      .mission-kicker {
+        margin: 0 auto 10px;
+        font-size: 17px;
+      }
+
+      .mission-card h2,
+      .final-card h2 {
+        font-size: clamp(38px, 12vw, 48px);
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .mission-text,
+      .mission-card.long-mission .mission-text {
+        min-height: auto;
+        font-size: 18px;
+        line-height: 1.15;
+        padding: 14px 13px;
+        border-radius: 22px;
+      }
+
+      .mission-note,
+      .mission-card.long-mission .mission-note {
+        border-radius: 20px;
+        font-size: 12px;
+        line-height: 1.15;
+        padding: 9px 10px;
+      }
+
+      .mission-example,
+      .mission-card.long-mission .mission-example {
+        font-size: 13px;
+        line-height: 1.12;
+        padding: 10px 12px;
+      }
+
+      .mission-meta {
+        grid-template-columns: 1fr;
+        gap: 9px;
+      }
+
+      .meta-box {
+        padding: 10px;
+        border-radius: 18px;
+      }
+
+      .meta-box strong {
+        font-size: 18px;
+      }
+
+      .final-wrap {
+        width: 100%;
+      }
+
+      .final-card-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        height: auto;
+      }
+
+      .final-left {
+        min-height: auto;
+        height: auto;
+        padding: 26px 12px;
+        border-radius: 28px;
+        gap: 12px;
+      }
+
+      .final-photo-frame {
+        width: 138px;
+        height: 138px;
+      }
+
+      .final-photo-frame span {
+        font-size: 60px;
+      }
+
+      .final-username {
+        font-size: 20px;
+      }
+
+      .final-subtitle {
+        font-size: 16px;
+        line-height: 1.15;
+      }
+
+      .final-stamps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+
+      .final-stamp {
+        min-height: 74px;
+        font-size: 11px;
+      }
+
+      .final-stamp b {
+        font-size: 23px;
+      }
+
+      .mission-summary {
+        grid-template-columns: 1fr;
+        gap: 7px;
+      }
+
+      .mission-summary div {
+        font-size: 11px;
+        line-height: 1.14;
+        min-height: auto;
+        padding: 9px 10px;
+      }
+
+      .modal-actions {
+        gap: 8px;
+      }
+
+      .toast {
+        width: min(92vw, 420px);
+        border-radius: 24px;
+        font-size: 18px;
+      }
+    }
+
+    /* Landscape export mode: this overrides mobile CSS during download. */
+    .export-mode .mission-card,
+    .export-mode .final-card {
+      width: 960px !important;
+      height: 540px !important;
+      min-width: 960px !important;
+      min-height: 540px !important;
+      max-width: 960px !important;
+      aspect-ratio: 16 / 9 !important;
+      padding: 34px 42px !important;
+      border-radius: 36px !important;
+      overflow: hidden !important;
+      text-align: left !important;
+    }
+
+    .export-mode .mission-card-layout {
+      height: 100% !important;
+      display: grid !important;
+      grid-template-columns: 260px minmax(0, 1fr) !important;
+      gap: 34px !important;
+      align-items: center !important;
+    }
+
+    .export-mode .mission-visual {
+      height: 390px !important;
+      min-height: 390px !important;
+      padding: 0 !important;
+      border-radius: 34px !important;
+    }
+
+    .export-mode .mission-sticker {
+      width: 142px !important;
+      height: 142px !important;
+      font-size: 76px !important;
+      margin: 0 auto 18px !important;
+    }
+
+    .export-mode .mission-kicker {
+      margin: 0 0 12px !important;
+      font-size: 20px !important;
+    }
+
+    .export-mode .mission-card h2,
+    .export-mode .final-card h2 {
+      font-size: 66px !important;
+      line-height: .86 !important;
+      text-align: left !important;
+      margin-bottom: 14px !important;
+    }
+
+    .export-mode .mission-text {
+      min-height: 112px !important;
+      font-size: 24px !important;
+      line-height: 1.12 !important;
+      padding: 18px 22px !important;
+      border-radius: 28px !important;
+    }
+
+    .export-mode .mission-card.long-mission .mission-text {
+      min-height: 104px !important;
+      font-size: 20px !important;
+      line-height: 1.08 !important;
+      padding: 15px 18px !important;
+    }
+
+    .export-mode .mission-note {
+      font-size: 14px !important;
+      line-height: 1.15 !important;
+      padding: 9px 14px !important;
+      border-radius: 999px !important;
+    }
+
+    .export-mode .mission-card.long-mission .mission-note {
+      font-size: 12.5px !important;
+      padding: 8px 12px !important;
+    }
+
+    .export-mode .mission-example {
+      font-size: 16px !important;
+      line-height: 1.14 !important;
+      padding: 11px 15px !important;
+    }
+
+    .export-mode .mission-card.long-mission .mission-example {
+      font-size: 13.5px !important;
+      line-height: 1.08 !important;
+      padding: 9px 12px !important;
+    }
+
+    .export-mode .mission-meta {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 12px !important;
+    }
+
+    .export-mode .final-card-inner {
+      height: 100% !important;
+      display: grid !important;
+      grid-template-columns: 270px 1fr !important;
+      gap: 22px !important;
+      align-items: stretch !important;
+    }
+
+    .export-mode .final-left {
+      min-height: 420px !important;
+      height: auto !important;
+      padding: 0 !important;
+      border-radius: 34px !important;
+      gap: 18px !important;
+    }
+
+    .export-mode .final-photo-frame {
+      width: 178px !important;
+      height: 178px !important;
+    }
+
+    .export-mode .final-card h2 {
+      font-size: 56px !important;
+      text-align: center !important;
+      margin-bottom: 8px !important;
+    }
+
+    .export-mode .final-subtitle {
+      font-size: 18px !important;
+      line-height: 1.1 !important;
+      margin-bottom: 10px !important;
+    }
+
+    .export-mode .final-stamps {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 9px !important;
+      margin: 10px 0 !important;
+    }
+
+    .export-mode .final-stamp {
+      min-height: 78px !important;
+      font-size: 12px !important;
+      line-height: 1.05 !important;
+      padding: 7px !important;
+    }
+
+    .export-mode .final-stamp b {
+      font-size: 24px !important;
+    }
+
+    .export-mode .mission-summary {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 7px !important;
+      margin-top: 8px !important;
+    }
+
+    .export-mode .mission-summary div {
+      font-size: 10.8px !important;
+      line-height: 1.08 !important;
+      min-height: 38px !important;
+      padding: 7px 9px !important;
+    }
+
   </style>
 </head>
 
@@ -1751,7 +2323,7 @@
         activeCard.classList.remove("hidden");
         activeTitle.textContent = `${activeMission.emoji} ${activeMission.title}`;
         activeText.textContent = activeMission.text;
-        statusText.textContent = "Mission aktif. Selesaikan dulu, lalu masukkan kode CT.";
+        statusText.textContent = "Mission aktif. Selesaikan dulu, lalu masukkan kode Scooper's.";
         machineTitle.textContent = "Mission in Progress";
         machineText.textContent = "Buka kembali mission card kalau ingin menyimpan kartunya.";
         drawBtn.textContent = "VIEW MISSION";
@@ -1980,6 +2552,7 @@
       showToast("Preparing 1920×1080 image...");
 
       const exportWrap = document.createElement("div");
+      exportWrap.className = "export-mode";
       exportWrap.style.position = "fixed";
       exportWrap.style.left = "-99999px";
       exportWrap.style.top = "0";
